@@ -11,4 +11,4 @@ COPY sentinel.conf /app/data/etc/sentinel.conf
 
 COPY run.sh /app/run.sh
 
-ENTRYPOINT [ "/app/run.sh" ]
+# ENTRYPOINT [ "/app/run.sh" ]
