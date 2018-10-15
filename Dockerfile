@@ -11,4 +11,4 @@ COPY sentinel.conf /app/data/etc/sentinel.conf
 
 COPY run.sh /app/run.sh
 
-CMD [ "sh /app/run.sh" ]
+CMD sh /app/run.sh
