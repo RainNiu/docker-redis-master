@@ -1,6 +1,6 @@
 #!/bin/bash
 
-apk add --no-cache tzdata && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && echo "Asia/Shanghai" > /etc/timezone 
+ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && echo "Asia/Shanghai" > /etc/timezone 
 
 redis-server /app/data/etc/redis.conf --protected-mode no
 
