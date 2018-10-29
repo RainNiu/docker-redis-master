@@ -8,6 +8,8 @@ WORKDIR /app
 
 COPY redis-master.conf /app/data/etc/redis.conf
 
-COPY run.sh /app/run.sh
+RUN ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && echo "Asia/Shanghai" > /etc/timezone 
 
-CMD sh /app/run.sh
+RUN sed -i "s/%redispass%/${REDIS_PASSWORD}/" /app/data/etc/redis.conf
+
+CMD [ "redis-server", "/app/data/etc/redis.conf" ]
